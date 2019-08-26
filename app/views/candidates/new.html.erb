@@ -1,0 +1,9 @@
+<h1>新增候選人</h1> 
+<%# <%= link_to '回列表頁', candidates_path, class: 'btn btn-lg btn-danger'%> 
+<%# <form action="/candidates" method="post">
+<input type="text" name="username">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>
+<%# <input type="submit">
+</form> %>
+
+<%= render 'form', candidate: @candidate %>

@@ -1,0 +1,14 @@
+<h1>候選人列表</h1>
+<%= paginate @candidates %>
+<ul>
+<% @candidates.each do |candidate| %>
+<%= link_to "投給這位？", vote_candidate_path(candidate.id), class: 'btn btn-xs btn-warning', method: 'put', data: { confirm: "確定要投給他嗎？"}%>
+    <li>
+    <%= candidate.vote%>票
+    <%= link_to candidate.name, candidate_path(candidate.id) %>
+    <%= link_to "編輯", edit_candidate_path(candidate.id), class: 'btn bg-xs btn-success'%>
+    <%= link_to "刪除", candidate_path(candidate.id), method: 'delete', data: { confirm: '確定要刪除嗎？'},class: 'btn bg-xs btn-danger' %>
+    </li>
+<% end %>
+</ul>
+<%= link_to '新增候選人', new_candidate_path, class: 'btn btn-danger btn-lg'%>

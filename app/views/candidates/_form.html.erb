@@ -1,0 +1,18 @@
+<% if @candidate.errors.any? %>
+  <ul>
+    <% @candidate.errors.full_messages.each do |message|%>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= simple_form_for(@candidate) do |form| %>
+<div class = "box">
+<%= form.input :name, label: "姓名" %>
+<%= form.input :degree, label: "學歷" %>
+<%= form.input :party, label: "黨派" %>
+<%= form.input :age, label: "年紀" %>
+<%= form.input :policy, label: "政見" %>
+<%= form.submit  class:'btn btn-success' %>
+</div>
+
+<% end %>
